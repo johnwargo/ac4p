@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hello World #4</title>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    br = "<br />";
+
+    function onBodyLoad() {
+      console.log("Entering onBodyLoad");
+      alert("Body Load");
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    function onDeviceReady() {
+      console.log("Entering onDeviceReady");
+      navigator.notification.alert("Cordova is ready!");
+      console.log("Cordova: " + device.cordova);
+      //Get the appInfo DOM element
+      var element = document.getElementById('appInfo');
+      //replace it with specific information about the device
+      //running the application
+      element.innerHTML = 'Cordova Version: ' + device.cordova + br + 'Platform: ' + device.platform + br +
+        'Model: ' + device.model + br + 'OS Version ' + device.version;
+    }
+  </script>
+</head>
+
+<body onload="onBodyLoad()">
+  <h1>Hello World #4</h1>
+  <p>This is a Cordova application that makes calls to the Cordova Device API.</p>
+  <p id="appInfo">Waiting for Cordova Initialization to complete.</p>
+</body>
+
+</html>

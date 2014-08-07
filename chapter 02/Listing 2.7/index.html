@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Example 276</title>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+  <style>
+    /* portrait */
+    @media screen and (orientation: portrait) {
+      /* portrait-specific styles */
+      body {
+        background-color: blue;
+        color: white;
+      }
+    }
+    /* landscape */
+    @media screen and (orientation: landscape) {
+      /* landscape-specific styles */
+      body {
+        background-color: red;
+        color: black;
+      }
+    }
+  </style>
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    br = "<br />";
+
+    function onBodyLoad() {
+      alert("Body Load");
+      document.addEventListener("deviceready", onDeviceReady, false);
+      //set the orientation change event listener
+      window.addEventListener('orientationchange', onOrientationChange);
+      //for devices that don't fire orientation change
+      window.addEventListener("resize", onResize, false);
+      //Fire this at the start to set the initial orientation on the page
+      updatePage();
+    }
+
+    function onDeviceReady() {
+      navigator.notification.alert("Cordova is ready!");
+
+    }
+
+    function updatePage(msg) {
+      //Build an output string consisting of the different screen 
+      //measurement values
+      var strongStart = "<strong>";
+      var strongEnd = "</strong>";
+      //var StrRes, or, sw, sh, ww, wh;
+      or = strongStart + "Orientation: " + strongEnd + window.orientation + " degrees";
+      console.log(or);
+      strRes = or + br;
+      sw = strongStart + "Width: " + strongEnd + screen.width;
+      console.log(sw);
+      strRes += sw + br;
+      sh = strongStart + "Height: " + strongEnd + screen.height;
+      console.log(sh);
+      strRes += sh + br;
+      ww = strongStart + "Inner width: " + strongEnd + window.innerWidth;
+      console.log(ww);
+      strRes += ww + br;
+      wh = strongStart + "Inner height: " + strongEnd + window.innerHeight;
+      console.log(wh);
+      strRes += wh + br;
+      document.getElementById('appInfo').innerHTML = strRes;
+    }
+
+    function onOrientationChange() {
+      var msg;
+      console.log("Orientation has changed");
+      switch (abs(window.orientation)) {
+      case 90:
+        console.log("Device is in Landscape mode");
+        break;
+      default:
+        console.log("Device is in Portrait mode");
+        break;
+      }
+      updatePage();
+    }
+
+    function onResize() {
+      console.log("Resize event fired");
+      updatePage();
+    }
+  </script>
+</head>
+
+<body onload="onBodyLoad()">
+  <h1>Example 2.7</h1>
+  <p>This is a Cordova application that responds to device orientation and resize events.</p>
+  <p id="appInfo">Waiting for Cordova Initialization to complete.</p>
+</body>
+
+</html>
