@@ -32,8 +32,9 @@
       tmpStr += makeListItem('Universally Unique Identifier: ' + device.uuid);
       tmpStr += '</ul>';
       //Get the appInfo DOM element
-      var element = document.getElementById('appInfo');
-      //replace it with specific information about the device running the application
+      var element = document.getElementById('deviceInfo');
+      //replace it with specific information about the device 
+      //running the application
       element.innerHTML = tmpStr;
       console.log("Leaving onDeviceReady");
     }
@@ -41,9 +42,13 @@
 </head>
 
 <body onload="onBodyLoad()">
-  <h1>Hello World #5</h1>
+  <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+      <h1 class="topcoat-navigation-bar__title">Hello World #5</h1>
+    </div>
+  </div>
   <p>This is a Cordova application that makes calls to the Cordova Device API.</p>
-  <p id="appInfo">Waiting for Cordova Initialization to complete.</p>
+  <p id="deviceInfo">Waiting for Cordova Initialization to complete.</p>
 </body>
 
 </html>
