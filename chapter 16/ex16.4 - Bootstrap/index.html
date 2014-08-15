@@ -21,20 +21,6 @@
       //test();
     }
 
-     //    function test() {
-     //      console.log("Entering Test function");
-     //      var tmpStr;
-     //      tmpStr = makeListItem('Cordova Version: ', "1");
-     //      tmpStr += makeListItem('Operating System: ', "2");
-     //      tmpStr += makeListItem('OS Version: ', "3");
-     //      tmpStr += makeListItem('Device Model: ', "4");
-     //      tmpStr += makeListItem('Universally Unique Identifier: ', "4");
-     //      console.log(tmpStr);
-     //      //Write the values to the Unordered list
-     //      $('#devInfo').html(tmpStr);
-     //      console.log("Leaving Test Function");
-     //    }
-
     function makeListItem(label, value) {
       return '<strong>' + label + '</strong>' + value + '<br />';
     }
@@ -51,8 +37,8 @@
       tmpStr += makeListItem('Device Model: ', device.model);
       tmpStr += makeListItem('Universally Unique Identifier: ', device.uuid);
 
-      //Write the values to the Unordered list
-      $('#devInfo').html(tmpStr);
+      //Write the values to the page
+      $('#deviceInfo').html(tmpStr);
 
       //replace it with specific information about the device running the application
       element.innerHTML = tmpStr;
@@ -94,7 +80,7 @@
     <div class="starter-template">
       <p class="lead">This is a Cordova application that makes calls to the Cordova Device API.</p>
       <h3>Device API Properties</h3>
-      <p id="devInfo"></p>
+      <p id="deviceInfo"></p>
     </div>
 
     <footer>
