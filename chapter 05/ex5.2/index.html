@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, 
-      height=device-height, initial-scale=1.0, 
-      maximum-scale=1.0, user-scalable=no;" />
-    <meta http-equiv="Content-type" content="text/html; 
+
+<head>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+  <meta http-equiv="Content-type" content="text/html; 
       charset=utf-8">
-    <script type="text/javascript" charset="utf-8" 
-      src="cordova.js"></script>
+  <script src="cordova.js"></script>
+  <script>
+    function onBodyLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-    <script type="text/javascript" charset="utf-8">
+    function onDeviceReady() {
+      //Just writing some console messages 
+      console.warn("This is a warning message!");
+      console.log("This is a log message!");
+      console.error("And this is an error message!");
+    }
+  </script>
+</head>
 
-      function onBodyLoad() {
-        document.addEventListener("deviceready", onDeviceReady,
-          false);
-      }
-      function onDeviceReady() {
-        //Just writing some console messages 
-        console.warn("This is a warning message!");
-        console.log("This is a log message!");
-        console.error("And this is an error message!");
-      }
+<body onload="onBodyLoad()">
+  <h1>Debug Example</h1>
+  <p>Look at the console to see the messages the application has outputted</p>
+</body>
 
-    </script>
-  </head>
-  <body onload="onBodyLoad()">
-    <h1>Debug Example</h1>
-    <p>Look at the console to see the messages the application 
-    has outputted</p>
-  </body>
 </html>
