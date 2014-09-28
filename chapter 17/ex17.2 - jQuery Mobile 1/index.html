@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hello World #5 - jQuery Mobile Version #1</title>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.3.min.js"></script>
+</head>
+
+<body onload="onBodyLoad()">
+  <div data-role="page">
+    <div data-role="header" data-position="fixed">
+      <h1>Hello World #5</h1>
+    </div>
+    <div data-role="content">
+      <p>This is a Cordova application that makes calls to the Cordova Device API.</p>
+      <h3>Device API Properties</h3>
+      <ul data-role="listview" id="devInfo"></ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h1>Apache Cordova 4 Programming</h1>
+    </div>
+  </div>
+  <script src="index.js"></script>
+  <script src="cordova.js"></script>
+</body>
+
+</html>
