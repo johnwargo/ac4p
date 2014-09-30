@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Example 3.1</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+  <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
+  <script src="index.js"></script>
+  <script src="cordova.js"></script>
+</head>
+
+<body onload="onBodyLoad()">
+  <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+      <h1 class="topcoat-navigation-bar__title">Debug Example</h1>
+    </div>
+  </div>
+  <p>This is a Cordova application I built as an example to use when illustrating how to work with debugging tools.</p>
+  <h2>Device Information</h2>
+  <button class="topcoat-button" onclick="getDeviceInfo();">
+    Get Device Info
+  </button>
+  <p id="deviceInfo"></p>
+  <h2>Camera Stuff</h2>
+  <button class="topcoat-button" onclick="takePhoto();">
+    Take a Picture
+  </button>
+  <h2>Loop Functions</h2>
+  <button class="topcoat-button" onclick="doLoop(5);">
+    Loop 5
+  </button>
+  <button class="topcoat-button" onclick="doLoop(10);">
+    Loop 10
+  </button>
+  <button class="topcoat-button" onclick="doLoop(20);">
+    Loop 20
+  </button>
+</body>
+
+</html>
