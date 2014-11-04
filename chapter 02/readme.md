@@ -1,7 +1,7 @@
-Chapter 18
-==========
+Chapter 2
+=========
 
-This folder contains sample source code from Apache Cordova 4 Programming Chapter 18.
+This folder contains sample source code from Apache Cordova 4 Programming Chapter 2.
 
 ***
 

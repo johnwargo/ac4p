@@ -7,15 +7,17 @@ There are a lot of code snippets throughout the book, but all I have published h
 
 Folders:
 
-* Chapter 1: 
-* Chapter 2: 
+* Chapter 1: Introduction
+* Chapter 2: Anatomy of a Cordova Application
 * Chapter 5: Contains the source code for the four HelloWorld applications highlighted in the chapter.
 * Chapter 6: 
+* Chapter 12: PhoneGap Build
 * Chapter 13: Contains the sample applications used to test the Meaning of Life and Carrier plugins highlighted in the chapter.
 * Chapter 14: Contains the Compass application highlighted in this chapter.
 * Chapter 15: Contains the source code for the Meaning of Life and Carrier plugins. 
 * Chapter 16
 * Chapter 17
+* Chapter 18
 
 You can purchase the book on Amazon.com at  or the publisher's web site at. 
 
