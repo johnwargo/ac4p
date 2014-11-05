@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Test Application</title>
-  <meta charset="utf-8" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-  <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
-  <script src="js/jquery-1.11.1.min.js"></script>
-  <script src="js/jquery.mobile-1.4.4.min.js"></script>
-  <script src="cordova.js"></script>
-  <script>
-    function onBodyLoad() {
-      console.log("Entering onBodyLoad");
-      alert("Body Load");
-      document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    function onDeviceReady() {
-      console.log("Entering onDeviceReady");
-      navigator.notification.alert("Cordova is ready!");
-      console.log("Cordova: " + device.cordova);
-    }
-  </script>
-</head>
-
-<body onload="onBodyLoad()">
-  <h1>Test Application</h1>
-  <p>This is a Cordova application that demonstrates most of the Cordova Core APIs.</p>
-</body>
-
+  <head>
+    <title>Test Application</title>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css"/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.4.min.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body onload="onBodyLoad()">
+    <div data-role="page">
+      <div data-role="header">
+        <h1>Cordova Kitchen Sink</h1>
+      </div>
+      <!-- /header -->
+      <div role="main" class="ui-content">
+        <p>This is a Cordova application that demonstrates how to use each of the Apache Cordova Core APIs.</p>
+        <ul data-role="listview">
+          <!--<li data-role="list-divider">Events</li>-->
+          <!--<li><a href=".html">deviceready</a></li>-->
+          <!--<li><a href=".html">pause</a></li>-->
+          <!--<li><a href=".html">resume</a></li>-->
+          <!--<li><a href=".html">backbutton</a></li>-->
+          <!--<li><a href=".html">menubutton</a></li>-->
+          <!--<li><a href=".html">searchbutton</a></li>-->
+          <!--<li><a href=".html">startcallbutton</a></li>-->
+          <!--<li><a href=".html">endcallbutton</a></li>-->
+          <!--<li><a href=".html">volumedownbutton</a></li>-->
+          <!--<li><a href=".html">volumeupbutton</a></li>-->
+          <!--<li data-role="list-divider">APIs</li>-->
+          <li><a href="battery.html">Battery Status</a></li>
+          <li><a href="camera.html">Camera</a></li>
+          <li><a href="console.html">Console</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="device.html">Device</a></li>
+          <li><a href="accelerometer.html">Device Motion (Accelerometer)</a></li>
+          <li><a href="compass.html">Device Orientation (Compass)</a></li>
+          <li><a href="dialogs.html">Dialogs</a></li>
+          <li><a href="filesystem.html">FileSystem</a></li>
+          <li><a href="filetransfer.html">File Transfer</a></li>
+          <li><a href="geolocation.html">Geolocation</a></li>
+          <li><a href="gobalization.html">Globalization</a></li>
+          <li><a href="iab.html">InAppBrowser</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="mediacapture.html">Media Capture</a></li>
+          <li><a href="connection.html">Network Information (Connection)</a></li>
+          <li><a href="splashscreen.html">Splashscreen</a></li>
+          <li><a href="statusbar.html">StatusBar</a></li>
+          <li><a href="vibration.html">Vibration</a></li>
+        </ul>
+      </div>
+      <!-- /content -->
+      <div data-role="footer" data-position="fixed">
+        <h4>Apache Cordova 4 Programming</h4>
+      </div>
+      <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <script src="cordova.js"></script>
+  </body>
 </html>
