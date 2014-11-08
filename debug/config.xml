@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.johnwargo.debug" versionCode="1.0.0" version="1.0.0">
+  <name>Cordova Debug</name>
+  <description>
+    A simple application designed to be used to demonstrate Cordova application debugging tools.</description>
+  <author href="www.johnwargo.com" email="john@johnwargo.com">
+    John M. Wargo
+  </author>
+  <preference name="phonegap-version" value="3.6.3" />
+  <preference name="orientation" value="default" />
+  <preference name="fullscreen" value="false" />
+  <preference name="target-device" value="universal" />
+  <preference name="webviewbounce" value="true" />
+  <preference name="prerendered-icon" value="true" />
+  <preference name="stay-in-webview" value="true" />
+  <preference name="ios-statusbarstyle" value="default" />
+  <preference name="detect-data-types" value="true" />
+  <preference name="exit-on-suspend" value="false" />
+  <preference name="show-splash-screen-spinner" value="true" />
+  <preference name="auto-hide-splash-screen" value="true" />
+  <preference name="EnableViewportScale" value="true" />
+  <preference name="MediaPlaybackRequiresUserAction" value="false" />
+  <preference name="AllowInlineMediaPlayback" value="false" />
+  <preference name="BackupWebStorage" value="cloud" />
+  <preference name="TopActivityIndicator" value="gray" />
+  <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+  <preference name="HideKeyboardFormAccessoryBar" value="false" />
+  <preference name="SuppressesIncrementalRendering" value="false" />
+  <preference name="android-minSdkVersion" value="17" />
+  <preference name="android-targetSdkVersion" value="17" />
+  <preference name="android-installLocation" value="internalOnly" />
+  <preference name="SplashScreenDelay" value="5000" />
+  <preference name="ErrorUrl" value="" />
+  <preference name="BackgroundColor" value="0x000000" />
+  <preference name="KeepRunning" value="true" />
+  <preference name="DisallowOverscroll" value="false" />
+  <preference name="LoadingDialog" value="," />
+  <preference name="LoadUrlTimeoutValue" value="20000" />
+  <preference name="disable-cursor" value="false" />
+  <gap:platform name="ios" />
+  <gap:platform name="android" />
+  <gap:platform name="winphone" />
+  <feature name="http://api.phonegap.com/1.0/contacts" />
+  <gap:plugin name="org.apache.cordova.camera.CameraLauncher" />
+  <gap:plugin name="org.apache.cordova.console" />
+  <gap:plugin name="org.apache.cordova.device.Device" />
+  <gap:plugin name="org.apache.cordova.dialogs.Notification" />
+</widget>
