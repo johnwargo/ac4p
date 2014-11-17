@@ -1,63 +1,27 @@
 <html>
-	<head>
-		<title>Example 17-3</title>
-		<meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<script type="text/javascript" charset="utf-8" src="jquery-2.0.3.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			br = "<br />";
-			var watchID
 
-			function onBodyLoad() {
-				alert("onBodyLoad");
-				document.addEventListener("deviceready", onDeviceReady);
-			}
+<head>
+  <title>Example 17-3</title>
+  <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <script src="jquery-2.0.3.min.js"></script>
+  <script src="cordova.js"></script>
 
-			function onDeviceReady() {
-				alert("onDeviceReady");
-				$('#accelInfo').prepend("Ready!<br />");
-			}
+</head>
 
-			function checkOrientation() {
-				$('#accelInfo').prepend(br + "Requesting Orientation." + br);
-				navigator.accelerometer.getCurrentAcceleration(orientationSuccess, orientationFailure);
-			}
+<body onload="onBodyLoad()">
+  <h1>Accelerometer Demo</h1>
+  <button onclick="checkOrientation()">
+    One Time
+  </button>
+  <br />
+  <button onclick="createWatch()">
+    Watch
+  </button>
+  <button onclick="clearWatch()">
+    Clear
+  </button>
+  <p id="accelInfo"></p>
+</body>
 
-			function orientationSuccess(res) {
-				$('#accelInfo').prepend("Received orientation." + br);
-				var d = new Date(res.timestamp);
-				$('#accelInfo').prepend("X: " + res.x + br + "Y: " + res.y + br + "Z: " + res.z + br + "Timestamp: " + d.toLocaleString() + br + br);
-			}
-
-			function orientationFailure() {
-				$('#accelInfo').prepend("Error determining orientation.<br />");
-			}
-
-			function createWatch() {
-				var options = {
-					frequency : 1000
-				};
-				watchID = navigator.accelerometer.watchAcceleration(orientationSuccess, orientationFailure, options);
-			}
-
-			function clearWatch() {
-				navigator.accelerometer.clearWatch(watchID);
-			}
-		</script>
-	</head>
-	<body onload="onBodyLoad()">
-		<h1>Accelerometer Demo</h1>
-		<button onclick="checkOrientation()">
-			One Time
-		</button>
-		<br />
-		<button onclick="createWatch()">
-			Watch
-		</button>
-		<button onclick="clearWatch()">
-			Clear
-		</button>
-		<p id="accelInfo"></p>
-	</body>
 </html>

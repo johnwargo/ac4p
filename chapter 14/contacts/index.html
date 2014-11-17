@@ -1,76 +1,26 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			window.onerror = function(msg, url, line) {
-				var idx = url.lastIndexOf("/");
-				if (idx > -1) {
-					url = url.substring(idx + 1);
-				}
-				alert("ERROR in " + url + " (line #" + line + "): " + msg);
-				return false;
-				//suppressErrorAlert;
-			};
 
-			function onBodyLoad() {
-				//alert("onBodyLoad");
-				document.addEventListener("deviceready", onDeviceReady, false);
-			};
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+  <script src="index.js"></script>
+  <script src="cordova.js"></script>
 
-			function onDeviceReady() {
-				//alert("onDeviceReady");
-			};
+</head>
 
-			function makeContact() {
+<body onload="onBodyLoad()">
+  <h1>Contacts Demo</h1>
+  <p>
+    This is a Cordova application that uses the Contacts API.
+  </p>
+  <button onclick="makeContact()">
+    Create Contact
+  </button>
+  <button onclick="findContact()">
+    Find Contact
+  </button>
+  <hr />
+</body>
 
-			}
-
-			function findContact() {
-				var contactFields = ["displayName", "name", "phoneNumbers", "emails", "addresses"];
-				var contactOptions = {
-					filter : "Wargo",
-					multiple : true
-				};
-				navigator.contacts.find(contactFields, contactSuccess, contactError, contactOptions);
-			}
-
-			function contactSuccess(contacts) {
-				for (var i = 0; i < contacts.length; i++) {
-					console.log("Contact[" + i + "]: " + JSON.stringify(contacts[i]));
-				}
-			}
-
-			function contactError(err) {
-				console.log("Error: " + err.code);
-			}
-
-			function onSuccess(resStr) {
-				alert("Result: " + resStr.value);
-				navigator.globalization.stringToDate(resStr.value, function(res) {
-					console.log("Result: " + JSON.stringify(res));
-				}, onFailure);
-			};
-
-			function onFailure(error) {
-				alert('Error conveting date to string\n Error Code: ' + error.code + '\nError Message: ' + error.message);
-			}
-		</script>
-
-	</head>
-	<body onload="onBodyLoad()">
-		<h1>Contacts Demo</h1>
-		<p>
-			This is a Cordova application that uses the Contacts API.
-		</p>
-		<button onclick="makeContact()">
-			Create Contact
-		</button>
-		<button onclick="findContact()">
-			Find Contact
-		</button>
-		<hr />
-	</body>
 </html>

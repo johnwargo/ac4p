@@ -1,99 +1,32 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			window.onerror = function(msg, url, line) {
-				var idx = url.lastIndexOf("/");
-				if (idx > -1) {
-					url = url.substring(idx + 1);
-				}
-				alert("ERROR in " + url + " (line #" + line + "): " + msg);
-				return false;
-				//suppressErrorAlert;
-			};
 
-			function onBodyLoad() {
-				//alert("onBodyLoad");
-				document.addEventListener("deviceready", onDeviceReady, false);
-			};
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+  <script src="index.js"></script>
+  <script src="cordova.js"></script>
+</head>
 
-			function onDeviceReady() {
-				//alert("onDeviceReady");
-			};
+<body onload="onBodyLoad()">
+  <h1>Globalization Demo</h1>
+  <p>
+    This is a Cordova application that uses the Globalization API.
+  </p>
+  <button onclick="getPreferred()">
+    Get Preferred Language
+  </button>
+  <hr />
+  <button onclick="doGlobal1()">
+    Click me 1
+  </button>
+  <button onclick="doGlobal2()">
+    Click me 2
+  </button>
+  <button onclick="doGlobal3()">
+    Click me 3
+  </button>
+  <hr />
+</body>
 
-			function getPreferred() {
-				navigator.globalization.getPreferredLanguage(onGPSuccess, onGPFailure);
-			}
-
-			function onGPSuccess(lang) {
-				alert("Preferred language: " + lang.value);
-			}
-
-			function onGPFailure(err) {
-				alert("Error: " + err.code + " - " + err.message);
-			}
-
-			function doGlobal1() {
-				var d = new Date();
-				//navigator.globalization.dateToString(date, successCallback, errorCallback, options);
-				navigator.globalization.dateToString(d, onSuccess, onFailure);
-			};
-
-			function doGlobal2() {
-				var d = new Date();
-				//navigator.globalization.dateToString(date, successCallback, errorCallback, options);
-				navigator.globalization.dateToString(d, onSuccess, onFailure, {
-					formatLength : 'short',
-					selector : 'date and time'
-				});
-			};
-
-			function doGlobal3() {
-				var d = new Date();
-				//navigator.globalization.dateToString(date, successCallback, errorCallback, options);
-				navigator.globalization.dateToString(d, onSuccess, onFailure, {
-					formatLength : 'long',
-					selector : 'date and time'
-				});
-			};
-
-			function doSTR() {
-			}
-
-			function onSuccess(resStr) {
-				alert("Result: " + resStr.value);
-				navigator.globalization.stringToDate(resStr.value, function(res) {
-					console.log("Result: " + JSON.stringify(res));
-				}, onFailure);
-			};
-
-			function onFailure(error) {
-				alert('Error conveting date to string\n Error Code: ' + error.code + '\nError Message: ' + error.message);
-			}
-		</script>
-
-	</head>
-	<body onload="onBodyLoad()">
-		<h1>Globalization Demo</h1>
-		<p>
-			This is a Cordova application that uses the Globalization API.
-		</p>
-		<button onclick="getPreferred()">
-			Get Preferred Language
-		</button>
-		<hr />
-		<button onclick="doGlobal1()">
-			Click me 1
-		</button>
-		<button onclick="doGlobal2()">
-			Click me 2
-		</button>
-		<button onclick="doGlobal3()">
-			Click me 3
-		</button>
-		<hr />
-	</body>
 </html>

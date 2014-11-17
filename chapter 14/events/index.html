@@ -2,45 +2,27 @@
 <html>
 
 <head>
-  <title>Example 14.2</title>
+  <title>Cordova Events</title>
   <meta charset="utf-8" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
   <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
+  <script src="jquery-2.0.3.min.js"></script>
   <script src="index.js"></script>
   <script src="cordova.js"></script>
-  <script>
-    function onBodyLoad() {
-      console.log("Entering onBodyLoad");
-      alert("Body Load");
-      document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    function onDeviceReady() {
-      console.log("Entering onDeviceReady");
-      navigator.notification.alert("Cordova is ready!");
-      console.log("Cordova: " + device.cordova);
-    }
-
-    function getPhoto() {
-      if (navigator.camera) {
-        navigator.notification.alert("Houston, we have a Camera!");
-        //Do something with the camera
-
-      } else {
-        navigator.notification.alert("No Camera, sorry.");
-      }
-    }
-  </script>
 </head>
 
 <body onload="onBodyLoad()">
   <div class="topcoat-navigation-bar">
     <div class="topcoat-navigation-bar__item center full">
-      <h1 class="topcoat-navigation-bar__title">Example 14.2</h1>
+      <h1 class="topcoat-navigation-bar__title">Cordova Events</h1>
     </div>
   </div>
   <p>This is a Cordova application that illustrates how to use the Cordova events.</p>
+  <button onclick="addEventListeners();">Add Event Listeners</button>
+  <button onclick="removeEventListeners();">Remove Event Listeners</button>
+  <hr />
+  <div id="eventOutput">Waiting for Cordova deviceready event to fire.</div>
 </body>
 
 </html>

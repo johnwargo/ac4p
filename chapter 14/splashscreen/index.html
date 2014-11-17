@@ -1,55 +1,21 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>SplashScreen Demo</title>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
-		<script type="text/javascript" charset="utf-8" src="jquery-2.0.3.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			window.onerror = function(msg, url, line) {
-				var idx = url.lastIndexOf("/");
-				if (idx > -1) {
-					url = url.substring(idx + 1);
-				}
-				alert("ERROR in " + url + " (line #" + line + "): " + msg);
-				return false;
-			};
 
-			function onBodyLoad() {
-				alert("onBodyLoad");
-				//console.log('onBodyLoad');
-				document.addEventListener("deviceready", onDeviceReady, false);
-			};
+<head>
+  <title>SplashScreen Demo</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+  <script src="jquery-2.0.3.min.js"></script>
+  <script src="index.js"></script>
+  <script src="cordova.js"></script>
+</head>
 
-			function onDeviceReady() {
-				alert("onDeviceReady");
-				console.log('onDeviceReady');
+<body onload="onBodyLoad()">
+  <h1>SplashScreen Demo</h1>
+  <p>This is a Cordova application that uses the SplashScreen API.</p>
+  <button onclick="showSplash()">
+    Show Splash Screen
+  </button>
+</body>
 
-			};
-
-			function showSplash() {
-				console.log('1');
-				navigator.splashscreen.show();
-				console.log('2');
-				setTimeout(hideSplash, 2000);
-				console.log('3');
-			}
-
-			function hideSplash() {
-				console.log('4');
-				navigator.splashscreen.hide();
-			}
-		</script>
-
-	</head>
-	<body onload="onBodyLoad()">
-		<h1>SplashScreen Demo</h1>
-		<p>
-			This is a Cordova application that uses the SplashScreen API.
-		</p>
-		<button onclick="showSplash()">
-			Show Splash Screen
-		</button>
-	</body>
 </html>
