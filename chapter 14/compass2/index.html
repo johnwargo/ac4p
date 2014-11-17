@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>Compass Demo</title>
+		<meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script type="text/javascript" charset="utf-8" src="jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			br = "<br />";
+			var watchID
+
+			function onBodyLoad() {
+				// alert("onBodyLoad");
+				document.addEventListener("deviceready", onDeviceReady);
+			}
+
+			function onDeviceReady() {
+				// alert("onDeviceReady");
+				$('#accelInfo').prepend(br + "Ready!");
+			}
+
+			function checkHeading() {
+				$('#accelInfo').prepend(br + "Requesting Heading." + br);
+				navigator.compass.getCurrentHeading(onSuccess, onFailure);
+			}
+
+			function onSuccess(res) {
+				// alert('onSuccess');
+				$('#accelInfo').prepend("Received Heading." + br);
+				var d = new Date(res.timestamp);
+				$('#accelInfo').prepend(br + "Magnetic Heading: " + res.magneticHeading + br + "True Heading: " + res.trueHeading + br + "Accuracy: " + res.headingAccuracy + br + "Timestamp: " + d.toLocaleString() + br + br);
+			}
+
+			function onFailure(err) {
+				// alert('onError');
+				var errStr;
+				switch (err.code) {
+					case CompassError.COMPASS_INTERNAL_ERR:
+						errStr = 'Internal error';
+						break;
+					case CompassError.COMPASS_NOT_SUPPORTED:
+						errStr = 'Compass not supported';
+						break;
+					default:
+						errStr = 'Unknown error';
+				}
+				$('#accelInfo').prepend("Error determining heading: ." + errStr + br);
+			}
+
+			function createWatch() {
+				var options = {
+					frequency : 1000,
+					//filter : 1
+				};
+				watchID = navigator.compass.watchHeading(onSuccess, onFailure, options);
+			}
+
+			function clearWatch() {
+				navigator.compass.clearWatch(watchID);
+			}
+		</script>
+	</head>
+	<body onload="onBodyLoad()">
+		<h1>Compass Demo</h1>
+		<button onclick="checkHeading()">
+			One Time
+		</button>
+		<br />
+		<button onclick="createWatch()">
+			Watch
+		</button>
+		<button onclick="clearWatch()">
+			Clear
+		</button>
+		<p id="accelInfo"></p>
+	</body>
+</html>

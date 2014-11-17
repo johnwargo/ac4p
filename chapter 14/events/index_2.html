@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Example 17-3</title>
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" charset="utf-8" src="jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      function onBodyLoad() {
+        alert("onBodyLoad");
+        document.addEventListener("deviceready", onDeviceReady);
+      }
+
+      function onDeviceReady() {
+        alert("onDeviceReady");
+        $('#networkInfo').prepend("Creating event listeners<br />");
+        //Add the online event listener
+        document.addEventListener("online", isOnline, false);
+        //Add the offline event listener
+        document.addEventListener("offline", isOffline, false);
+      }
+
+      function isOnline() {
+        //alert("isOnline");
+        var d = new Date();
+        $('#networkInfo').prepend("Online: " + d.toLocaleString() + "<br />");
+      }
+
+      function isOffline() {
+        //alert("isOffline");
+        var d = new Date();
+        $('#networkInfo').prepend("Offline: " + d.toLocaleString() + "<br />");
+      }
+    </script>
+  </head>
+  <body onload="onBodyLoad()">
+    <h1>Network Tracker</h1>
+    <p id="networkInfo"></p>
+  </body>
+</html>
