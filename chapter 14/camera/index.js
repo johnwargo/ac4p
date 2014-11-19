@@ -8,7 +8,6 @@ window.onerror = function (msg, url, line) {
   }
   alert("ERROR in " + url + " (line #" + line + "): " + msg);
   return false;
-  //suppressErrorAlert;
 };
 
 function onBodyLoad() {

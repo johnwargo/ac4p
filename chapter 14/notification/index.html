@@ -4,15 +4,62 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
-  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
+  <script src="index.js"></script>
+  <script src="cordova.js"></script>
 </head>
 
 <body onload="onBodyLoad()">
-  <h1>Alert Test</h1>
-  <p>
-    This is a Cordova application that uses the Notification API.
-  </p>
+  <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+      <h1 class="topcoat-navigation-bar__title">Notification</h1>
+    </div>
+  </div>
+  <p>This is a Cordova application that uses the Notification API.</p>
 
+  <!----------------->
+
+  <h1>Beep</h1>
+  <div class="topcoat-button-bar">
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button" onclick="doBeep(1);">One</button>
+    </div>
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button" onclick="doBeep(2);">Two</button>
+    </div>
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button" onclick="doBeep(3);">Three</button>
+    </div>
+  </div>
+
+  <!----------------->
+
+  <h1>Vibration</h1>
+  <label for="vibDur">Duration</label>
+  <input type="number" class="topcoat-text-input" id="vibDur" value="500" placeholder="500" min="250" max="5000">
+  <button class="topcoat-button" onclick="doVibrate();">Vibrate</button>
+
+  <!----------------->
+
+  <h1>Alert</h1>
+  <div class="topcoat-button-bar">
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button" onclick="doAlert1();">One</button>
+    </div>
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button" onclick="doAlert2();">Two</button>
+    </div>
+  </div>
+
+  <!----------------->
+
+  <h1>Confirm</h1>
+  <button class="topcoat-button" onclick="doConfirm();">Confirm</button>
+
+  <!----------------->
+
+  <h1>Prompt</h1>
+  <button class="topcoat-button" onclick="doPrompt();">Prompt</button>
 </body>
 
 </html>
