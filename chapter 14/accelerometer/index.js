@@ -31,7 +31,7 @@ function onBodyLoad() {
 function onDeviceReady() {
   console.log("Entering onDeviceReady");
   console.log("Cordova: " + device.cordova);
-  alert("onDeviceReady");
+  navigator.notification.alert("Cordova is ready");
   $('#accelInfo').prepend("Ready!<br />");
   console.log("Leaving onDeviceReady");
 }
