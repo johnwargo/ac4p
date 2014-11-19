@@ -1,32 +1,23 @@
 <html>
 
 <head>
-  <title>Compass Demo</title>
+  <title>Camera</title>
   <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <script src="jquery-2.0.3.min.js"></script>
+  <script src="jquery-2.1.1.min.js"></script>
+  <script src="index.js"></script>
   <script src="cordova.js"></script>
 </head>
 
 <body onload="onBodyLoad()">
   <h1>Camera Demo</h1>
   <h2>Camera API</h2>
-  <button onclick="getPic()">
-    Take Photo
-  </button>
-  <button onclick="doCleanup()">
-    Cleanup
-  </button>
-  <h2>Capture API</h2>
-  <button onclick="capPhoto()">
-    Capture Photo
-  </button>
-  <button onclick="capVideo()">
-    Capture Video
-  </button>
-  <button onclick="capAudio()">
-    Capture Audio
-  </button>
+  <button onclick="getPic()">Take Photo</button>
+  <button onclick="doCleanup()">Cleanup</button>
+  <h2>Capture API</h2> 
+  <button onclick="capPhoto()">Capture Photo</button>
+  <button onclick="capVideo()">Capture Video</button>
+  <button onclick="capAudio()">Capture Audio</button>
   <p id="CameraInfo"></p>
 </body>
 
