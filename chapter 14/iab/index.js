@@ -1,22 +1,35 @@
+/* jshint browser: true */
+/*global alert*/
+/*global console*/
+/*global device*/
+
 window.onerror = function (msg, url, line) {
   var idx = url.lastIndexOf("/");
   if (idx > -1) {
     url = url.substring(idx + 1);
   }
-  alert("ERROR in " + url + " (line #" + line + "): " + msg);
+  //Build the message string we'll display to the user
+  var errStr = "ERROR in " + url + " (line #" + line + "): " + msg;
+  //Write the error to the console
+  console.error(errStr);
+  //Tell the user what happened
+  alert(errStr);
   return false;
 };
 
 function onBodyLoad() {
-  //alert("onBodyLoad");
-  //console.log('onBodyLoad');
-  document.addEventListener("deviceready", onDeviceReady, false);
-};
+  console.log("Entering onBodyLoad");
+  alert("onBodyLoad");
+  document.addEventListener("deviceready", onDeviceReady);
+  console.log("Leaving onBodyLoad");
+}
 
 function onDeviceReady() {
-  //alert("onDeviceReady");
-  console.log('onDeviceReady');
-};
+  console.log("Entering onDeviceReady");
+  console.log("Cordova: %s", device.cordova);
+  navigator.notification.alert("Cordova is ready");
+  console.log("Leaving onDeviceReady");
+}
 
 function showHelp1() {
   console.log('showHelp1');
@@ -100,7 +113,7 @@ function onLoadStop(event) {
 }
 
 function onLoadError(event) {
-  console.log('onLoadError: ' + JSON.stringify(event));
+  console.error('onLoadError: ' + JSON.stringify(event));
 }
 
 function onExit(event) {

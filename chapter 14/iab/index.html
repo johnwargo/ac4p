@@ -2,40 +2,27 @@
 <html>
 
 <head>
+  <title>InAppBrowser Demo</title>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
-  <script src="jquery-2.0.3.min.js"></script>
+  <script src="jquery-2.1.1.min.js"></script>
   <script src="index.js"></script>
   <script src="cordova.js"></script>
 </head>
 
 <body onload="onBodyLoad()">
-  <h1>iAB Demo</h1>
+  <h1>InAppBrowser Demo</h1>
   <p>
     This is a Cordova application that uses the inAppBrowser API.
   </p>
-  <button onclick="showHelp1()">
-    Help (_blank)
-  </button>
-  <button onclick="showHelp2()">
-    Help (_self)
-  </button>
-  <button onclick="showHelp3()">
-    Help (_system)
-  </button>
-  <button onclick="injectCSS()">
-    Insert CSS
-  </button>
-  <button onclick="injectScript()">
-    Insert Script
-  </button>
+  <button onclick="showHelp1()">Help (_blank)</button>
+  <button onclick="showHelp2()">Help (_self)</button>
+  <button onclick="showHelp3()">Help (_system)</button>
+  <button onclick="injectCSS()">Insert CSS</button>
+  <button onclick="injectScript()">Insert Script</button>
   <hr />
-  <button onclick="showAuthorWeb1()">
-    Author (Location=yes)
-  </button>
-  <button onclick="showAuthorWeb2()">
-    Author (location=no)
-  </button>
+  <button onclick="showAuthorWeb1()">Author (Location=yes)</button>
+  <button onclick="showAuthorWeb2()">Author (location=no)</button>
   <hr />
 </body>
 

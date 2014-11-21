@@ -2,6 +2,7 @@
 /*global alert*/
 /*global console*/
 /*global device*/
+/*global StatusBar*/
 
 window.onerror = function (msg, url, line) {
   var idx = url.lastIndexOf("/");
@@ -28,14 +29,17 @@ function onDeviceReady() {
   console.log("Entering onDeviceReady");
   console.log("Cordova: " + device.cordova);
   navigator.notification.alert("Cordova is ready");
+  console.log(JSON.stringify(StatusBar));
   console.log("Leaving onDeviceReady");
 }
 
-function showSplash() {
-  navigator.splashscreen.show();
-  setTimeout(hideSplash, 2000);
-}
+function somefunc() {
 
-function hideSplash() {
-  navigator.splashscreen.hide();
+  StatusBar.hide();
+  StatusBar.show();
+
+  if (StatusBar.isVisible) {
+    // do something
+  }
+
 }

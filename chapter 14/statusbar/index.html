@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Status Bar Demo</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
+  <script src="jquery-2.0.3.min.js"></script>
+  <script src="index.js"></script>
+  <script src="cordova.js"></script>
+</head>
+
+<body onload="onBodyLoad()">
+  <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+      <h1 class="topcoat-navigation-bar__title">Status Bar Demo</h1>
+    </div>
+  </div>
+  <p>This is a Cordova application that illustrates the use of the Statuse Bar plugin.</p>
+  <h1>Visibility</h1>
+  <button class="topcoat-button" onclick="StatusBar.show();">Show</button>
+  <button class="topcoat-button" onclick="StatusBar.hide();">Hide</button>
+  <h1>Overlay</h1>
+  <button class="topcoat-button" onclick="  StatusBar.overlaysWebView(true);">True</button>
+  <button class="topcoat-button" onclick="  StatusBar.overlaysWebView(false);">False</button>
+  <h1>Style</h1>
+  <div class="topcoat-button-bar">
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button" onclick="StatusBar.styleDefault();">Default</button>
+    </div>
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button" onclick="StatusBar.styleLightContent();">Light</button>
+    </div>
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button" onclick="StatusBar.styleBlackTranslucent();">Translucent</button>
+    </div>
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button" onclick="StatusBar.styleBlackOpaque();">Opaque</button>
+    </div>
+  </div>
+  <h1>Color</h1>
+  <button class="topcoat-button" onclick="StatusBar.backgroundColorByName('orange');">Orange</button>
+  <button class="topcoat-button" onclick="StatusBar.backgroundColorByHexString('#C0C0C0');">#C0C0C0</button>
+</body>
+
+</html>
