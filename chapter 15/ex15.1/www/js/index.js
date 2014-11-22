@@ -1,65 +1,79 @@
 /* jshint browser: true */
-/*global console*/
 /*global alert*/
+/*global console*/
+/*global device*/
 /*global $*/
+/*global CompassError*/
 
 //Some variables used by the application
-var hi, watchID;
-var appName = "Compass - ";
+var watchID;
 
-//Fires whenever there is an error - helps with toubleshooting.
 window.onerror = function (msg, url, line) {
-  var resStr;
-  var idx = url.lastIndexOf('/');
+  var idx = url.lastIndexOf("/");
   if (idx > -1) {
     url = url.substring(idx + 1);
   }
-  resStr = 'ERROR in ' + url + ' on line ' + line + ': ' + msg;
-  console.error(resStr);
-  alert(resStr);
+  //Build the message string we'll display to the user
+  var errStr = "ERROR in " + url + " (line #" + line + "): " + msg;
+  //Write the error to the console
+  console.error(errStr);
+  //Tell the user what happened
+  alert(errStr);
   return false;
 };
 
 function onBodyLoad() {
-  document.addEventListener('deviceready', onDeviceReady, false);
+  console.log("Entering onBodyLoad");
+  alert("onBodyLoad");
+  document.addEventListener("deviceready", onDeviceReady);
+  console.log("Leaving onBodyLoad");
 }
 
 function onDeviceReady() {
-  console.log('onDeviceReady fired.');
-  hi = document.getElementById('headingInfo');
+  console.log("Entering onDeviceReady");
+  console.log("Cordova: " + device.cordova);
+  navigator.notification.alert("Cordova is ready");
   //Setup the watch
   //Read the compass every second (1000 milliseconds)
   var watchOptions = {
     frequency: 1000,
-    // filter : 1
   };
-  console.log(appName + 'Creating watch: ' + JSON.stringify(watchOptions));
+  console.log('Creating watch: %s', JSON.stringify(watchOptions));
   watchID = navigator.compass.watchHeading(onSuccess, onError, watchOptions);
+  console.log("Leaving onDeviceReady");
 }
 
 function onSuccess(heading) {
-  console.log(appName + 'Received Heading');
-  console.log(appName + JSON.stringify(heading));
+  console.log("Entering onSuccess");
+  console.log('Received Heading');
+  console.log(JSON.stringify(heading));
   var hv = Math.round(heading.magneticHeading);
-  console.log(appName + 'Rotating to ' + hv + ' degrees');
+  $('#headingInfo').html('<b>Heading:</b> ' + hv + ' Degrees');
+  console.log('Rotating to ' + hv + ' degrees');
   $("#compass").rotate(-hv);
-  hi.innerHTML = '<b>Heading:</b> ' + hv + ' Degrees';
+  console.log("Leaving onSuccess");
 }
 
 function onError(err) {
-  console.error(appName + 'Heading Error');
-  console.error(appName + 'Error: ' + JSON.stringify(err));
+  var msg;
+  console.log("Entering onError");
+  console.error('Error: ' + JSON.stringify(err));
   //Remove the watch since we're having a problem
   navigator.compass.clearWatch(watchID);
-  //Clear the heading value from the page
-  // $('#headingInfo').replaceWith('<b>Heading:</b> None');
-  hi.innerHTML = '<b>Heading: </b>None';
+  //Clear the heading value from the page  
+  $('#headingInfo').html('<b>Heading: </b>None');
   //Then tell the user what happened.
-  if (err.code == CompassError.COMPASS_NOT_SUPPORTED) {
-    alert('Compass not supported.');
-  } else if (err.code == CompassError.COMPASS_INTERNAL_ERR) {
-    alert('Compass Internal Error');
-  } else {
-    alert('Unknown heading error!');
+  switch (err.code) {
+  case CompassError.COMPASS_NOT_SUPPORTED:
+    msg = 'Compass not supported';
+    break;
+  case CompassError.COMPASS_INTERNAL_ERR:
+    msg = 'Internal compass error';
+    break;
+  default:
+    msg = 'Unknown heading error!';
   }
+  console.error(msg);
+  navigator.notification.alert(msg, null, "Compass Error", "Continue");
+  console.log("Leaving onError");
 }
