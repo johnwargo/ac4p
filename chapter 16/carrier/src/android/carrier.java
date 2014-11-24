@@ -18,7 +18,7 @@ import org.json.JSONException;
 
 public class carrier extends CordovaPlugin {
 
-	// define some constants for the suported actions
+	// define some constants for the supported actions
 	public static final String ACTION_GET_CARRIER_NAME = "getCarrierName";
 	public static final String ACTION_GET_COUNTRY_CODE = "getCountryCode";
 
@@ -41,13 +41,11 @@ public class carrier extends CordovaPlugin {
 			// First check on the getCarrierName
 			if (ACTION_GET_CARRIER_NAME.equals(action)) {
 				callbackContext.success(tm.getSimOperatorName());
-				// callbackContext.success("getCarrierName Result");
 				return true;
 			} else {
 				// Next see if its a getCountryCode action
 				if (ACTION_GET_COUNTRY_CODE.equals(action)) {
 					callbackContext.success(tm.getSimCountryIso());
-					// callbackContext.success("getCountryCode Result");
 					return true;
 				}
 			}
