@@ -13,7 +13,7 @@
       </feature>
     </config-file>
     <config-file parent="/*" target="AndroidManifest.xml" />
-	 <config-file target="AndroidManifest.xml" parent="/*">
+    <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     </config-file>
     <source-file src="src/android/carrier.java" target-dir="src/com/johnwargo/carrier" />

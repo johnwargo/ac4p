@@ -34,7 +34,7 @@ function onDeviceReady() {
 
 function doGetCarrier() {
   console.log("Entering doGetCarrier");
-  carrier.getCarrier(onSuccess, onError);
+  carrier.getCarrierName(onSuccess, onError);
   console.log("Leaving doGetCarrier");
 }
 
