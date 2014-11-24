@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Carrier Demo</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+  <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
+  <script src="index.js"></script>
+  <script src="cordova.js"></script>
+</head>
+
+<body onload="onBodyLoad()">
+  <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+      <h1 class="topcoat-navigation-bar__title">Carrier Demo</h1>
+    </div>
+  </div>
+  <p>This is a Cordova application that uses my fancy new Carrier plugin.</p>
+  <div class="topcoat-button-bar">
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button--large" onclick="doGetCarrier();">Carrier Name</button>
+    </div>
+    <div class="topcoat-button-bar__item">
+      <button class="topcoat-button-bar__button--large" onclick="doGetCountryCode();">Country Code</button>
+    </div>
+  </div>
+</body>
+
+</html>
