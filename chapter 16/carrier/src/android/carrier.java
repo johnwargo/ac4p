@@ -1,4 +1,4 @@
-package com.cordovaprogramming.carrier;
+package com.johnwargo.carrier;
 
 //Cordova imports
 //import org.apache.cordova.Config;
