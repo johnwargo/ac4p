@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <plugin id="com.johnwargo.mol" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
   <name>mol</name>
-  <description>Answer to the Ultimate Question of Life, the Universe, and Everything (42)</description>
+  <description>Answer to the Ultimate Question of Life, the Universe, and Everything</description>
   <license>Apache 2.0</license>
   <author>John M. Wargo</author>
   <keywords>42</keywords>
