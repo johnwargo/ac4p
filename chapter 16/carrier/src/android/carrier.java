@@ -1,4 +1,4 @@
-package com.cordovaprogramming.Carrier;
+package com.cordovaprogramming.carrier;
 
 //Cordova imports
 //import org.apache.cordova.Config;
@@ -11,6 +11,7 @@ import org.apache.cordova.CordovaWebView;
 //Android imports
 import android.content.Context;
 import android.telephony.TelephonyManager;
+
 //JSON Imports
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,7 +26,6 @@ public class carrier extends CordovaPlugin {
 
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 		super.initialize(cordova, webView);
-
 		// the plugin doesn't have direct access to the application context,
 		// so you have to get it first
 		Context context = this.cordova.getActivity().getApplicationContext();
