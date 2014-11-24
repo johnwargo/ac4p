@@ -1,6 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface CarrierPlugin : CDVPlugin {
+@interface carrier : CDVPlugin {
 
 }
 

@@ -1,8 +1,8 @@
-#import "CarrierPlugin.h"
+#import "carrier.h"
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 
-@implementation CarrierPlugin
+@implementation carrier
 
 - (void)getCarrierName:(CDVInvokedUrlCommand*)command
 {
