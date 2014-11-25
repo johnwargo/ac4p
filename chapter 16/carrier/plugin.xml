@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<plugin id="com.johnwargo.carrier" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="com.johnwargo.carrier" version="0.0.3" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
   <name>carrier</name>
   <description>A Cordova Plugin for retrieving Wireless Carrier information.</description>
   <author>John M. Wargo</author>
+  <keywords>carrier,telephony</keywords>
   <js-module name="carrier" src="www/carrier.js">
     <clobbers target="carrier" />
   </js-module>
@@ -25,5 +26,6 @@
       </feature>
     </config-file>
     <source-file src="src/ios/carrier.m" />
+    <framework src="CoreTelephony.framework" />
   </platform>
 </plugin>

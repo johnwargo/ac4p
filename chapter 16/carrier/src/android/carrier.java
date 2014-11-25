@@ -1,11 +1,9 @@
 package com.johnwargo.carrier;
 
 //Cordova imports
-//import org.apache.cordova.Config;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
-//import org.apache.cordova.api.PluginResult;
 import org.apache.cordova.CordovaWebView;
 
 //Android imports
@@ -16,7 +14,7 @@ import android.telephony.TelephonyManager;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class carrier extends CordovaPlugin {
+public class carrier extends CordovaPlugin { 
 
 	// define some constants for the supported actions
 	public static final String ACTION_GET_CARRIER_NAME = "getCarrierName";

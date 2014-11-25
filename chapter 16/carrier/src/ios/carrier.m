@@ -1,6 +1,18 @@
-#import "carrier.h"
+/********* carrier.m Cordova Plugin Implementation *******/
+
+#import <Cordova/CDV.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
+
+@interface carrier : CDVPlugin {
+  // Member variables go here.
+	
+}
+
+- (void)getCarrierName:(CDVInvokedUrlCommand*)command;
+- (void)getCountryCode:(CDVInvokedUrlCommand*)command;
+
+@end
 
 @implementation carrier
 
