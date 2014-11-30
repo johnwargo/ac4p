@@ -15,51 +15,52 @@ var autoprefix = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
 
 // JS hint task
-gulp.task('jshint', function() {
+gulp.task('jshint', function () {
   gulp.src('./code/js/*.js')
-  .pipe(jshint())
-  .pipe(jshint.reporter('default'));
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 // minify new images
-gulp.task('imagemin', function() {
-  var imgSrc = './code/img/**/*', imgDst = './www/img';
+gulp.task('imagemin', function () {
+  var imgSrc = './code/img/**/*',
+    imgDst = './www/img';
   gulp.src(imgSrc)
-  .pipe(changed(imgDst))
-  .pipe(imagemin())
-  .pipe(gulp.dest(imgDst));
+    .pipe(changed(imgDst))
+    .pipe(imagemin())
+    .pipe(gulp.dest(imgDst));
 });
 
 // minify new or changed HTML pages
-gulp.task('htmlpage', function() {
-  var htmlSrc = './code/*.html', htmlDst = './www';
+gulp.task('htmlpage', function () {
+  var htmlSrc = './code/*.html',
+    htmlDst = './www';
   gulp.src(htmlSrc)
-  .pipe(changed(htmlDst))
-  .pipe(minifyHTML())
-  .pipe(gulp.dest(htmlDst));
+    .pipe(changed(htmlDst))
+    .pipe(minifyHTML())
+    .pipe(gulp.dest(htmlDst));
 });
 
 // JS concat, strip debugging and minify
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
   gulp.src(['./code/js/index.js', './code/js/*.js'])
-  .pipe(concat('script.js'))
+    .pipe(concat('script.js'))
   //Uncomment out this line before going to production
   //.pipe(stripDebug())
   .pipe(uglify())
-  .pipe(gulp.dest('./www/'));
+    .pipe(gulp.dest('./www/'));
 });
 
 // CSS concat, auto-prefix and minify
-gulp.task('styles', function() {
+gulp.task('styles', function () {
   gulp.src(['./code/css/*.css'])
-  .pipe(concat('styles.css'))
-  .pipe(autoprefix('last 2 versions'))
-  .pipe(minifyCSS())
-  .pipe(gulp.dest('./www/'));
+    .pipe(concat('styles.css'))
+    .pipe(autoprefix('last 2 versions'))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('./www/'));
 });
 
 gulp.task('prepare', shell.task(['ls', 'cordova prepare']));
 
 // default gulp task
-gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles', 'prepare'], function() {
-});
+gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles', 'prepare'], function () {});
