@@ -1,7 +1,9 @@
-/*jslint browser:true*/
-/*global console*/
-/*global sap*/
-/*global device*/
+/* jshint browser: true */
+/*global alert */
+/*global console */
+/*global device */
+/*global sap */
+/*global $ */
 
 "use strict";
 
@@ -21,7 +23,7 @@ function onDeviceReady() {
   tmpStr += makeListItem('Operating System: ', device.platform);
   tmpStr += makeListItem('OS Version: ', device.version);
   tmpStr += makeListItem('Device Model: ', device.model);
-  tmpStr += makeListItem('Universally Unique Identifier: ', device.uuid);
+  tmpStr += makeListItem('UUId: ', device.uuid);
   //Write the values to the page
   $('#deviceInfo').html(tmpStr);
 

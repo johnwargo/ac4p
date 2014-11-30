@@ -2,3 +2,4 @@
 /*global alert*/
 /*global console*/
 /*global device*/
+/*global $*/

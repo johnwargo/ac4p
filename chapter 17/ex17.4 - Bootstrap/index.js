@@ -1,8 +1,13 @@
+/* jshint browser: true */
+/*global alert*/
+/*global console*/
+/*global device*/
+/*global $*/
+
 function onBodyLoad() {
   console.log("Entering onBodyLoad");
   alert("Body Load");
   document.addEventListener("deviceready", onDeviceReady, false);
-  //test();
 }
 
 function makeListItem(label, value) {
@@ -19,12 +24,10 @@ function onDeviceReady() {
   tmpStr += makeListItem('Operating System: ', device.platform);
   tmpStr += makeListItem('OS Version: ', device.version);
   tmpStr += makeListItem('Device Model: ', device.model);
-  tmpStr += makeListItem('Universally Unique Identifier: ', device.uuid);
+  tmpStr += makeListItem('UUId: ', device.uuid);
 
   //Write the values to the page
   $('#deviceInfo').html(tmpStr);
 
-  //replace it with specific information about the device running the application
-  element.innerHTML = tmpStr;
   console.log("Leaving onDeviceReady");
 }
