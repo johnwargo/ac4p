@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Cordova Gulp Demo",
   "main": "gulpfile.js",
-  "dependencies": {
+  "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^0.0.7",
     "gulp-changed": "^0.3.0",
@@ -15,8 +15,7 @@
     "gulp-shell": "^0.2.5",
     "gulp-strip-debug": "^0.3.0",
     "gulp-uglify": "^0.3.0"
-  },
-  "devDependencies": {},
+  },  
   "author": "John M. Wargo",
   "license": "Apache"
 }
