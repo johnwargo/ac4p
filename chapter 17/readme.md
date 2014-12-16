@@ -1,15 +1,14 @@
 Apache Cordova 4 Programming: Chapter 17
 ========================================
 
-This chapter contains examples of how to use several third-party HTML frameworks with Apache Cordova. Included in this chapter are examples using:
+This chapter contains examples of how to use several third-party HTML frameworks with Apache Cordova. Included in this chapter are examples for:
 
-*	Adobe Topcoat
-*	jQuery Mobile
-*	Bootstrap
-*	SAP OpenUI5
-*	Sencha Touch
-*	Ionic
-*	Onsen UI
++ [Adobe Topcoat](http://topcoat.io/)
++ [jQuery Mobile](http://jquerymobile.com/) (two examples)
++ [Bootstrap](http://getbootstrap.com/)
++ [SAP OpenUI5](https://sap.github.io/openui5/)
++ [Ionic](http://ionicframework.com/)
++ [Onsen UI](http://onsen.io/)
 
 ***
 

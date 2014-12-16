@@ -1,7 +1,7 @@
 Apache Cordova 4 Programming: Chapter 18
 ========================================
 
-This folder contains sample source code from Apache Cordova 4 Programming Chapter 18.
+This folder contains the build scripts used to highlight the capabilities of [Gulp](http://gulpjs.com/) and [Grunt](http://gruntjs.com/) and how they can be used with Apache Cordova projects. 
 
 ***
 
