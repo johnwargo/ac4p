@@ -1,7 +1,7 @@
-Chapter 12
-==========
+Apache Cordova 4 Programming: Chapter 12
+========================================
 
-This part of the repository contains example files from Chapter 12 of Apache Cordova 4 Programming. This chapter covers the PhoneGap Build service, so the files contained herein will be sample project files used in the chapter. 
+This folder contains a single web application that is used to demonstrate the smallest possible set of files needed to create a [PhoneGap Build](https://build.phonegap.com/) application. 
 
 ***
 
