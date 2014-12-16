@@ -1,8 +1,7 @@
 Apache Cordova 4 Programming: Chapter 5
 =======================================
 
-
-This folder contains sample source code from Apache Cordova 4 Programming Chapter 5.
+Listing 5.4 contains a simple sample application that demonstrates how to use the browser console object to write information to the device console. 
 
 ***
 

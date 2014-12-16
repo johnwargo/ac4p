@@ -13,7 +13,7 @@ This folder contains the following projects:
 + ex2.6 - HelloWorld6, demonstrates how to split a Cordova application's JavaScript code into a separate file
 + ex2.7 - Example 2.7, demonstrates how to implement responsive design in a Cordova application
 
-The source code was written from an educational standpoint, no effort was made to make the code small or fast.
+The source code was written from an educational standpoint, no effort was made to make the code small or fast, just readable and easily understandable.
 
 ***
 
