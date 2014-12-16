@@ -1,5 +1,5 @@
-Chapter 14
-==========
+Apache Cordova 4 Programming: Chapter 14
+========================================
 
 This folder contains sample source code from Apache Cordova 4 Programming Chapter 14.
 

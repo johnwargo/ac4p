@@ -1,5 +1,5 @@
 Apache Cordova 4 Programming: Chapter 6
-=======================================
+========================================
 
 The files in this folder are some helper files I created to align with the content in the chapter.
 

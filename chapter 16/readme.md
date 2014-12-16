@@ -1,5 +1,6 @@
-Chapter 16
-==========
+Apache Cordova 4 Programming: Chapter 16
+========================================
+
 This folder contains the two plugins described in Chapter 16. 
 
 The mol folder contains the Meaning of Life plugin which is a JavaScript-only plugin that calculates the Meaning of Life (the "Answer to the Ultimate Question of Life, the Universe, and Everything" from Douglas Adams' Hitchiker's Guide to the Galaxy simplified by me to Meaning of Life)

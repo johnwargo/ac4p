@@ -1,5 +1,5 @@
 Apache Cordova 4 Programming: Chapter 1
-=======================================
+========================================
 
 This folder contains sample source code from Apache Cordova 4 Programming Chapter 1. The application shown here is just a simple (very simple) HTML application I use in Chapter 1 to illustrate the smallest possible Cordova web application. 
 

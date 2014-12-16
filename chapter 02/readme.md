@@ -1,5 +1,5 @@
 Apache Cordova 4 Programming: Chapter 2
-=======================================
+========================================
 
 This folder contains sample source code from Apache Cordova 4 Programming Chapter 2. This chapter covers the Anatomy of an Apache Cordova application. In this chapter, I start with a simple web application and show how to turn it into a Cordova application then I show more complex examples as I describe the structure of a Cordova application.
 

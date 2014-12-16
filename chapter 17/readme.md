@@ -1,5 +1,6 @@
-Chapter 17
-==========
+Apache Cordova 4 Programming: Chapter 17
+========================================
+
 This chapter contains examples of how to use several third-party HTML frameworks with Apache Cordova. Included in this chapter are examples using:
 
 *	Adobe Topcoat
