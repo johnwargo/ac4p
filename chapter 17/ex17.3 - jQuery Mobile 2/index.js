@@ -11,7 +11,7 @@ function onBodyLoad() {
 }
 
 function makeListItem(textStr) {
-  return '<li">' + textStr + '</li>';
+  return '<li>' + textStr + '</li>';
 }
 
 function onDeviceReady() {

@@ -31,7 +31,8 @@ function onDeviceReady() {
   console.log("Entering onDeviceReady");
   console.log("Cordova: " + device.cordova);
   //Blank out the page content
-  $('#eventOutput').html = '';
+  $('#eventOutput').html('');
+
   navigator.notification.alert("Cordova is ready");
 
   //Add the Cordova event listeners

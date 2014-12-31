@@ -33,6 +33,25 @@ function onDeviceReady() {
 
 function makeContact() {
 
+  var newContact = navigator.contacts.create();
+  //Populate the contact object with values
+  var fullName = "John M. Wargo";
+  newContact.displayName = fullName
+  newContact.nickname = "John";
+
+  //Populate the Contact's Name entries
+  var tmpName = new ContactName();
+  tmpName.givenName = "John";
+  tmpName.familyName = "Wargo";
+  tmpName.formatted = fullName;
+  //Then add the name object to the contact object
+  newContact.name = tmpName;
+
+  newContact.save(saveSuccess, contactError);
+}
+
+function saveSuccess() {
+  navigator.notification.alert("Contact created successfully");
 }
 
 function findContact() {
@@ -52,11 +71,13 @@ function contactSuccess(contacts) {
   for (var i = 0; i < contacts.length; i++) {
     console.log("Contact[" + i + "]: " + JSON.stringify(contacts[i]));
   }
+  navigator.notification.alert(contacts.length + " contacts found.");
 }
 
 function contactError(err) {
   console.error(err);
   console.log("Error: " + err.code);
+  navigator.notification.alert("Error: " + err.code);
 }
 
 function onSuccess(resStr) {
