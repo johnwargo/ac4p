@@ -8,7 +8,7 @@ var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 var minifyHTML = require('gulp-minify-html');
 var concat = require('gulp-concat');
-//Uncomment out this line before going to production
+//Uncomment the following line before going to production
 //var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
 var autoprefix = require('gulp-autoprefixer');
@@ -45,7 +45,7 @@ gulp.task('htmlpage', function () {
 gulp.task('scripts', function () {
   gulp.src(['./code/js/index.js', './code/js/*.js'])
     .pipe(concat('script.js'))
-  //Uncomment out this line before going to production
+  //Uncomment the following line before going to production
   //.pipe(stripDebug())
   .pipe(uglify())
     .pipe(gulp.dest('./www/'));
