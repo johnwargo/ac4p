@@ -5,6 +5,11 @@
   <license>Apache 2.0</license>
   <author>John M. Wargo</author>
   <keywords>42</keywords>
+  <info>
+    This is a sample plugin from Apache Cordova 4 Programming by John M. Wargo.
+
+    Learn more about the publication at www.cordova4programming.com.
+  </info>
   <js-module name="mol" src="www/mol.js">
     <clobbers target="mol" />
   </js-module>

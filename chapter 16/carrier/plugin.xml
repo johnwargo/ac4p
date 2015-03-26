@@ -4,6 +4,11 @@
   <description>A Cordova Plugin for retrieving Wireless Carrier information.</description>
   <author>John M. Wargo</author>
   <keywords>carrier,telephony</keywords>
+  <info>
+    This is a sample plugin from Apache Cordova 4 Programming by John M. Wargo
+    
+    Learn more about the publication at www.cordova4programming.com.
+  </info>
   <js-module name="carrier" src="www/carrier.js">
     <clobbers target="carrier" />
   </js-module>
