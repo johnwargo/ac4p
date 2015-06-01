@@ -1,0 +1,24 @@
+{
+  "name": "johnwargo-cordova-plugin-mol",
+  "version": "0.0.2",
+  "description": "Answer to the Ultimate Question of Life, the Universe, and Everything",
+  "cordova": {
+    "id": "com.johnwargo.mol",
+    "platforms": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwargo/ac4p.git"
+  },
+  "keywords": [
+    "42",
+    "ecosystem:cordova",
+    "ecosystem:phonegap"
+  ],
+  "author": "John M. Wargo",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/johnwargo/ac4p/issues"
+  },
+  "homepage": "https://github.com/johnwargo/ac4p#readme"
+}

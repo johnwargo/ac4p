@@ -1,0 +1,31 @@
+{
+  "name": "johnwargo-cordova-plugin-carrier",
+  "version": "0.0.4",
+  "description": "A Cordova Plugin for retrieving Wireless Carrier information.",
+  "cordova": {
+    "id": "com.johnwargo.carrier",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwargo/ac4p.git"
+  },
+  "keywords": [
+    "carrier",
+    "telephony",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "ecosystem:cordova,",
+    "ecosystem:phonegap,"
+  ],
+  "author": "John M. Wargo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/johnwargo/ac4p/issues"
+  },
+  "homepage": "https://github.com/johnwargo/ac4p#readme"
+}
